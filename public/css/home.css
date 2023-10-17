@@ -30,7 +30,7 @@
 
   .container {
       display: grid;
-      grid-template-columns: 25% 1fr;
+      grid-template-columns: 25% 1fr 25%;
       width: 100%;
       height: 100%;
   }
@@ -39,4 +39,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+  }
+  .menus {
+    background-color: white;
+    border: 2px solid black;
+    margin: 2rem;
   }

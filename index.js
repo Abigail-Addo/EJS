@@ -4,6 +4,9 @@ const app = express();
 const PORT = 2023;
 const path = require('path');
 const bodyParser = require('body-parser');
+const db = require('./config/db');
+const router = require('./src/router/routes')
+// const knex = require('./config/db')
 
 const expressLayouts = require('express-ejs-layouts');
 const { render } = require('ejs');
@@ -23,6 +26,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('Server is running on port 2023');
+    console.log(`Server is running on port ${PORT}`);
 });
 
