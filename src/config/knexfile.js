@@ -16,6 +16,20 @@ module.exports = {
   //   },
   //   useNullAsDefault: true,
   // },
+  
+  build: {
+    client: 'sqlite3',
+    connection: {
+      filename: './Menuplus.sqlite3'
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: './migrations'
+    }, 
+    seeds: {
+      directory: './seeds'
+    }
+  },
 
   development: {
     client: 'mysql',
