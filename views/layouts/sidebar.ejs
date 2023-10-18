@@ -6,11 +6,22 @@
             <%= PageName %>
         </li>
         <li> Employees </li>
-        <li> Logout </li>
+        <li class="logout"> Logout </li>
     </ul>
 </div>
 
 <script>
+    // logout
+    const logout = document.querySelector(".logout");
+    logout.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const confirmed = confirm("are u sure u want to logout");
 
+
+        //if true then logout user 
+        if (confirmed == true) {
+            window.location.href = '/login';
+        }
+    });
 
 </script>

@@ -1,0 +1,15 @@
+###
+POST http://localhost:2023/api/v1/loginUser
+
+Content-Type: application/json
+
+{
+  "username": "Abigail",
+  "email": "addoa350@gmail.com"
+}
+
+###
+GET http://localhost:2023/api/v1/allUsers
+
+###
+GET http://localhost:2023/api/v1/getMeals

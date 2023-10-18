@@ -12,6 +12,8 @@ exports.up = function (knex) {
         table.string('image');
         table.boolean('is_vegetarian').defaultTo(false);
         table.timestamps(true, true);
+    }).then(() => {
+        console.log(' "meal" table created');
     });
 }
 

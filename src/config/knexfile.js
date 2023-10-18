@@ -4,30 +4,37 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
-
-  development: {
-    client: 'sqlite3',
-    connection: {
-      filename: './dev.sqlite3'
-    },
-    useNullAsDefault: true,
-  },
-
+  
   // development: {
-  //   client: 'mysql',
+  //   client: 'sqlite',
   //   connection: {
-  //     database: 'abiscuisine',
-  //     user: 'root',
-  //     password: '',
-  //     port: 2023,
-  //     host: 'localhost'
+  //     filename: './dev.sqlite3'
   //   },
-
   //   migrations: {
   //     tableName: 'knex_migrations',
   //     directory: './migrations'
-  //   }
+  //   },
+  //   useNullAsDefault: true,
   // },
+
+  development: {
+    client: 'mysql',
+    connection: {
+      database: 'abiscuisine',
+      user: 'root',
+      password: '',
+      port: 3306,
+      host: 'localhost'
+    },
+
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: './migrations'
+    },
+    seeds: {
+      directory: './seeds'
+    }
+  },
 
   staging: {
     client: 'postgresql',
