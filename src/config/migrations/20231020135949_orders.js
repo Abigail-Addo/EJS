@@ -4,14 +4,14 @@
  */
 exports.up = function (knex) {
 
-    return knex.schema.createTable('user', table => {
+    return knex.schema.createTable('orders', table => {
         table.increments('id').primary();
-        table.string('email');
+        table.integer('meal_id');
         table.string('username');
         table.timestamps(true, true);
 
     }).then(() => {
-        console.log(' "user" table created');
+        console.log(' "orders" table created');
     });
 };
 
@@ -20,6 +20,6 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-    return knex.schema.dropTable('user');
+    return knex.schema.dropTable('orders');
 
 };
