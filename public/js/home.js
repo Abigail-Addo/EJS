@@ -11,22 +11,24 @@ window.addEventListener('load', async () => {
     const response = await result.json();
     console.log(response);
 
-    const row = document.querySelector('.content');
+    const row = document.querySelector('div.content');
 
     let contents = '';
     response.meal.forEach(meal => {
         contents += `
             <div class="card" id=${meal.id}>
                 <div class="image">
-                  <img src="${meal.image}" alt="hot deals">
+                <img src="${meal.image}" alt="hot deals">
                 </div>
+              
                 <div class="card-body">
                     <div class="card-text">
                         <h5>${meal.name}</h5>
                         <p>GH &cent; ${meal.price} </p>
                         <p>${meal.description}</p>
-                        <button type="button" class="button" aria-hidden="true" id=${meal.id}>Order</button>
                     </div>
+                    <button type="button" class="button" aria-hidden="true" id=${meal.id}>Order</button>
+
                 </div>
             </div>
         `;
@@ -35,7 +37,6 @@ window.addEventListener('load', async () => {
 
     const OrderBtns = document.querySelectorAll('.button');
     // deleteOrder();
-
 
     OrderBtns.forEach(btn => {
         btn.addEventListener('click', async (e) => {
@@ -46,7 +47,6 @@ window.addEventListener('load', async () => {
 
             let meal_id = e.target.id;
 
-            alert(meal_id)
             if (!meal_id) {
                 return;
             }
@@ -128,10 +128,8 @@ window.addEventListener('load', async () => {
                         user.classList.add('remove-deleted');
                         user.addEventListener('transitionend', () => {
                             user.remove();
-
-
-
                         })
+
                         window.location.href = window.location.href;
 
                         console.log("order deleted successfully");
@@ -171,8 +169,7 @@ window.addEventListener('load', async () => {
             totalPriceElement.textContent = formattedTotalPrice;
         });
 
-        // Store it in local storage
-        localStorage.setItem('totalPrice', totalPrice);
+    
     }
 
 
