@@ -16,8 +16,8 @@ class Order extends Model {
                 name: { type: 'string' },
                 price: { type: 'integer' },
                 description: { type: 'string' },
-                is_vegetarian: { type: 'string' },
-                created_at: { type: 'boolean' },
+                is_vegetarian: { type: 'boolean' },
+                created_at: { type: 'string' },
                 updated_at: { type: 'string' }
             }
         };
